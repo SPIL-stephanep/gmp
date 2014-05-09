@@ -79,7 +79,9 @@
 
 global.showresult = 0;
 
-{
+if(global.cash == 0) {
+    show_message("Sorry, you ran out of cash !");
+} else {
   bet = get_integer('Enter your bet (between 0 and 36)', 0);
   if(bet) {
     global.showresult = 0;
