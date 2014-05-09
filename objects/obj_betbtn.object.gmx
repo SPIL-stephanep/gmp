@@ -139,13 +139,20 @@ global.showresult = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>var status;
+
+draw_self();
 
 if(global.showresult == 1) {
+    if(global.bet == global.result) {
+        status = 'won';
+    } else {
+        status = 'lost';
+    }
     draw_set_halign(fa_center);
     draw_set_font(fnt_default);
     draw_set_color(c_white);
-    draw_text(305, 80, "result: " + string(global.result));
+    draw_text(305, 80, "result: " + string(global.result) + '##you ' + status + '!');
 }
 </string>
           </argument>
