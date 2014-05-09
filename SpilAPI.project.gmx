@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\spr_betbtn</sprite>
     <sprite>sprites\spr_morebtn</sprite>
+    <sprite>sprites\spr_cash</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -19,6 +20,7 @@
   <objects name="objects">
     <object>objects\obj_betbtn</object>
     <object>objects\obj_morebtn</object>
+    <object>objects\obj_cash</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>
