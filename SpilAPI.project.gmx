@@ -13,6 +13,9 @@
     <background>background\bg_main</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_default</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_betbtn</object>
     <object>objects\obj_morebtn</object>
