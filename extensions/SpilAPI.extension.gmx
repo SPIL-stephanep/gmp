@@ -26,11 +26,20 @@
           <externalName></externalName>
           <kind>11</kind>
           <help>SpilAPI_loadAPI()</help>
-          <returnType>2</returnType>
+          <returnType>1</returnType>
           <argCount>1</argCount>
           <args>
             <arg>1</arg>
           </args>
+        </function>
+        <function>
+          <name>SpilAPI_getLogo</name>
+          <externalName></externalName>
+          <kind>11</kind>
+          <help>SpilAPI_getLogo()</help>
+          <returnType>1</returnType>
+          <argCount>0</argCount>
+          <args/>
         </function>
       </functions>
       <constants/>

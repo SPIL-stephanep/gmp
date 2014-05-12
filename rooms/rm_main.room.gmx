@@ -13,7 +13,7 @@
   <code>window_set_caption("Fake Roulette");
 random_set_seed(random(10000));
 
-// load the SpilGames API in your game
+// load the SpilGames API in your game on room creation
 var AppID = "576742227280291016";
 SpilAPI_loadAPI(AppID);</code>
   <enableViews>0</enableViews>
