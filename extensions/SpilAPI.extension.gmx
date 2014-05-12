@@ -27,8 +27,10 @@
           <kind>11</kind>
           <help>SpilAPI_loadAPI()</help>
           <returnType>2</returnType>
-          <argCount>0</argCount>
-          <args/>
+          <argCount>1</argCount>
+          <args>
+            <arg>1</arg>
+          </args>
         </function>
       </functions>
       <constants/>

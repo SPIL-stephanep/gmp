@@ -9,13 +9,13 @@ function SpilAPI_injectAPI(callback) {
 	};
 }
 
-function SpilAPI_loadAPI() {
+function SpilAPI_loadAPI(AppID) {
 	SpilAPI_injectAPI(function() {
 		if(window && window.GameAPI) {
 			window.GameAPI.loadAPI(function(instance) {
 				console.log('SPIL Game API v' + instance.version + ' loaded in Game Maker!');
 				return instance;
-			});
+			}, {id: AppID});
 		}
 	});
 }
