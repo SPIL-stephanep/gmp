@@ -1,4 +1,4 @@
-function SpilAPI_injectAPI(callback) {
+function injectAPI(callback) {
 	var s = document.createElement('script');
 	s.src = 'http://cdn.gameplayer.io/api/js/game.js';
 	s.id = 'spil-api';
@@ -10,7 +10,7 @@ function SpilAPI_injectAPI(callback) {
 }
 
 function SpilAPI_loadAPI(AppID) {
-	SpilAPI_injectAPI(function() {
+	injectAPI(function() {
 		if(window && window.GameAPI) {
 			window.GameAPI.loadAPI(function(instance) {
 				console.log('SPIL Game API v' + instance.version + ' loaded in Game Maker!');
@@ -23,5 +23,11 @@ function SpilAPI_loadAPI(AppID) {
 }
 
 function SpilAPI_isReady() {
-	return window.GameAPI.isReady;
+	return (window.GameAPI && window.GameAPI.isReady);
+}
+
+function SpilAPI_getLogo() {
+	var logoData = window.GameAPI.Branding.getLogo();
+	console.log(logoData);
+	return JSON.stringify(logoData);
 }

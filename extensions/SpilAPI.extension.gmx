@@ -41,6 +41,15 @@
           <argCount>0</argCount>
           <args/>
         </function>
+        <function>
+          <name>SpilAPI_getLogo</name>
+          <externalName></externalName>
+          <kind>11</kind>
+          <help>SpilAPI_getLogo()</help>
+          <returnType>1</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
       </functions>
       <constants/>
     </file>

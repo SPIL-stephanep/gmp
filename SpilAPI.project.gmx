@@ -11,6 +11,7 @@
     <sprite>sprites\spr_betbtn</sprite>
     <sprite>sprites\spr_morebtn</sprite>
     <sprite>sprites\spr_cash</sprite>
+    <sprite>sprites\spr_logo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -24,6 +25,7 @@
     <object>objects\obj_betbtn</object>
     <object>objects\obj_morebtn</object>
     <object>objects\obj_cash</object>
+    <object>objects\obj_logo</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>
