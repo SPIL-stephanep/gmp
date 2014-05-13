@@ -49,11 +49,12 @@
           <argument>
             <kind>1</kind>
             <string>if(SpilAPI_isReady()) {
-    draw_self();
     if(global.logoData == "") {
         global.logoData = SpilAPI_getLogo();
-        show_message(string(global.logoData));
+        show_message(global.logoData);
     }
+    
+    draw_self();
 }
 </string>
           </argument>
