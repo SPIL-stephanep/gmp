@@ -28,6 +28,15 @@ function SpilAPI_isReady() {
 
 function SpilAPI_getLogo() {
 	var logoData = window.GameAPI.Branding.getLogo();
-	console.log(logoData);
 	return JSON.stringify(logoData);
+}
+
+function SpilAPI_getLink(linkName) {
+	var linkData = window.GameAPI.Branding.getLink(linkName);
+	return JSON.stringify(linkData);
+}
+
+function SpilAPI_listLinks() {
+	var links = window.GameAPI.Branding.listLinks();
+	return JSON.stringify(links);
 }
