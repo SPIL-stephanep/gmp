@@ -10,12 +10,15 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>window_set_caption("Fake Roulette");
+  <code>// these two lines are game-specific
+window_set_caption("Fake Roulette");
 random_set_seed(random(10000));
 
-// load the SpilGames API in your game on room creation
-var AppID = "576742227280291016";
-SpilAPI_loadAPI(AppID);</code>
+// store your application ID in the global namespace
+global.AppID = "576742227280291016";
+// load the SpilGames API in your game
+// passing your application ID as argument
+SpilAPI_loadAPI(global.AppID);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>

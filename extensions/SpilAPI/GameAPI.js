@@ -21,3 +21,7 @@ function SpilAPI_loadAPI(AppID) {
 		}
 	});
 }
+
+function SpilAPI_isReady() {
+	return window.GameAPI.isReady;
+}
