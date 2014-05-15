@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>global.logoData = "";
+
+var url = "http://www8.agame.com/mirror/img/logo_A10_202x50.png";
+var logo = sprite_add(url, 1 ,0, 0, 10, 10);
+sprite_index = logo;
 </string>
           </argument>
         </arguments>
@@ -49,10 +53,14 @@
           <argument>
             <kind>1</kind>
             <string>if(SpilAPI_isReady()) {
-    if(global.logoData == "") {
-        global.logoData = SpilAPI_getLogo();
-        show_message(global.logoData);
-    }
+    //if(global.logoData == "") {
+    //    global.logoData = SpilAPI_getLogo();
+    //    show_message(global.logoData);
+    //}
+    
+    //var url = "http://www8.agame.com/mirror/img/logo_A10_202x50.png";
+    //var logo = sprite_add(url, 1 ,0, 0, 10, 10);
+    //sprite_index = logo;
     
     draw_self();
 }
