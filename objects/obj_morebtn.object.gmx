@@ -51,7 +51,7 @@
             <string>if(SpilAPI_isReady()) {
     if(global.moreGamesData == "") {
         global.moreGamesData = SpilAPI_getLink("more_games");
-        show_message(global.moreGamesData);
+        // show_message(global.moreGamesData);
     }
     
     //then draw your button
