@@ -27,16 +27,17 @@ function SpilAPI_isReady() {
 }
 
 function SpilAPI_getLogo() {
-	var logoData = window.GameAPI.Branding.getLogo();
-	return JSON.stringify(logoData);
+	var logoData = window.GameAPI.Branding.getLogo(),
+		logoLink = JSON.parse(SpilAPI_getLink('logo'));
+
+	return JSON.stringify({
+		linkName: 'logo',
+		image: logoData.image || '',
+		url: logoLink.url || ''
+	});
 }
 
 function SpilAPI_getLink(linkName) {
-	var linkData = window.GameAPI.Branding.getLink(linkName);
+	var linkData = window.GameAPI.Branding._getGMLink(linkName);
 	return JSON.stringify(linkData);
-}
-
-function SpilAPI_listLinks() {
-	var links = window.GameAPI.Branding.listLinks();
-	return JSON.stringify(links);
 }
