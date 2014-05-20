@@ -41,3 +41,8 @@ function SpilAPI_getLink(linkName) {
 	var linkData = window.GameAPI.Branding._getGMLink(linkName);
 	return JSON.stringify(linkData);
 }
+
+function SpilAPI_listLinks () {
+	var linkList = window.GameAPI.Branding.listLinks();
+	return JSON.stringify(linkList);
+}

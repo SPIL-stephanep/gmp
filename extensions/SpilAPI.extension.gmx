@@ -61,6 +61,15 @@
             <arg>1</arg>
           </args>
         </function>
+        <function>
+          <name>SpilAPI_listLinks</name>
+          <externalName></externalName>
+          <kind>11</kind>
+          <help>SpilAPI_listLinks()</help>
+          <returnType>1</returnType>
+          <argCount>0</argCount>
+          <args/>
+        </function>
       </functions>
       <constants/>
     </file>

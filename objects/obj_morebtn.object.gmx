@@ -48,11 +48,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// get the more games link and open it on click
-var data = json_decode(SpilAPI_getLink('more_games'));
-var url = ds_map_find_value(data, "url");
+            <string>var moreUrl;
 
-url_open_ext(url, '_blank');
+if(global.moreGamesData &amp;&amp; global.moreGamesData != "") {
+    moreUrl = ds_map_find_value(global.moreGamesData, "url");
+} else if(SpilAPI_isReady()) {
+    // get the more games link and open it on click
+    var data = json_decode(SpilAPI_getLink('more_games'));
+    moreUrl = ds_map_find_value(data, "url");
+}
+
+url_open_ext(moreUrl, '_blank');
 </string>
           </argument>
         </arguments>
@@ -77,8 +83,7 @@ url_open_ext(url, '_blank');
             <kind>1</kind>
             <string>if(SpilAPI_isReady()) {
     if(global.moreGamesData == "") {
-        global.moreGamesData = SpilAPI_getLink("more_games");
-        // show_message(global.moreGamesData);
+        global.moreGamesData = json_decode(SpilAPI_getLink("more_games"));
     }
     
     //then draw your button
