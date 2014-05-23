@@ -10,7 +10,10 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>// these two lines are game-specific
+  <code>// define callback functions
+callback_define_script("pauseGame", pauseGame());
+
+// these two lines are game-specific
 window_set_caption("Fake Roulette");
 random_set_seed(random(10000));
 
