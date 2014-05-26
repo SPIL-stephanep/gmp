@@ -11,7 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>// define callback functions
-callback_define_script("pauseGame", pauseGame());
+SpilAPI_define_callback("pauseGame", pauseGame());
 
 // these two lines are game-specific
 window_set_caption("Fake Roulette");

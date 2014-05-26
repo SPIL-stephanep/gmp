@@ -50,36 +50,35 @@ function SpilAPI_listLinks () {
 
 function execute_callback(cbName, data) {
 	//console.log(cb, typeof cb);
-	if(gmCallback[cbName]) {
-		gmCallback[cbName](data);
+	if(SpilAPI_callbacks[cbName]) {
+		SpilAPI_callbacks[cbName](data);
 	}
 }
 
-//======= GM Callback v1.1 ========
-//By JacksonYarr
-//Website: http://JacksonYarr.com/
-//License: Creative Commons Attribution 3.0 Unported License
+//======= callback handler ========
+// ispied by gmCallback 1.1
+//By JacksonYarr, http://JacksonYarr.com/
 //=================================
 
-var gmCallback = new Object();
+var SpilAPI_callbacks = new Object();
 
-function callback_script(extname,numargs)
-{
-	if(gmCallback[extname] != undefined)
-	{return true;}
+function SpilAPI_has_callback(extname, numargs) {
+	if(SpilAPI_callbacks[extname] !== undefined) {
+		return true;
+	}
 	
-	var obFunc = window["callback_script"].caller.name;
+	var obFunc = window["SpilAPI_has_callback"].caller.name;
 
-	if(obFunc == undefined) //IE always makes things difficult.
-	{obFunc = arguments.callee.caller.toString().match(/function ([^\(]+)/)[1];}
+	// IE Patch
+	if(obFunc === undefined) {
+		obFunc = arguments.callee.caller.toString().match(/function ([^\(]+)/)[1];
+	}
 	
 	var args = "";
 	var gmres = "0,0";
 	
-	if(numargs > 0)
-	{
-		while(numargs > 0)
-		{
+	if(numargs > 0) {
+		while(numargs > 0) {
 			args = "arg"+numargs+","+args;
 			numargs--;
 		}
@@ -88,15 +87,15 @@ function callback_script(extname,numargs)
 		gmres = gmres+",";
 	}
 	
-	gmCallback[extname] = eval("(function("+ args +"){"+ obFunc +"("+ gmres + args +");})");
+	SpilAPI_callbacks[extname] = eval("(function("+ args +"){"+ obFunc +"("+ gmres + args +");})");
 	
 	return false;
 }
 
-function callback_define_script(extname,gmscript)
-{
-	if(gmCallback[extname] != undefined)
-	{return true;}
+function SpilAPI_define_callback(extname, gmscript) {
+	if(SpilAPI_callbacks[extname] !== undefined) {
+		return true;
+	}
 	
 	return false;
 }
