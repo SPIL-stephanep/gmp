@@ -4,5 +4,5 @@ if(!SpilAPI_has_callback("pauseGame",0)) {
 }
 
 // the body of your callback function
-show_message("I got called back!");
-
+show_message("Game API requested that I pause myself");
+// below, put your logic to pause your game

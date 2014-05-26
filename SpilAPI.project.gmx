@@ -19,6 +19,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\pauseGame.gml</script>
+    <script>scripts\resumeGame.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>

@@ -14,7 +14,10 @@ function SpilAPI_loadAPI(AppID) {
 		if(window && window.GameAPI) {
 			window.GameAPI.loadAPI(function(instance) {
 				console.log('SPIL Game API v' + instance.version + ' loaded in Game Maker!');
-				execute_callback('pauseGame', "API loaded!");
+				// add automatic handlers
+				handle_game_pause();
+				handle_game_resume();
+				
 				return true;
 			}, {id: AppID});
 		} else {
@@ -49,10 +52,21 @@ function SpilAPI_listLinks () {
 }
 
 function execute_callback(cbName, data) {
-	//console.log(cb, typeof cb);
 	if(SpilAPI_callbacks[cbName]) {
 		SpilAPI_callbacks[cbName](data);
 	}
+}
+
+function handle_game_pause() {
+	window.GameAPI.Game.on('pause', function() {
+		execute_callback('pauseGame');
+	});
+}
+
+function handle_game_resume() {
+	window.GameAPI.Game.on('resume', function() {
+		execute_callback('resumeGame');
+	});
 }
 
 //======= callback handler ========
